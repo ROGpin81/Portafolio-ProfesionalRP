@@ -3,59 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Portafolio | Ing. Roger Pineda</title>
   <meta name="description" content="Portafolio profesional de Roger Pineda: PMO, Project Manager y Desarrollador Web.">
 
-  <!-- 1) Configuración Tailwind (debe ir antes del CDN) -->
-  <script src="JS/tailwind.config.js"></script>
-
-  <!-- 2) Tailwind (Play CDN) -->
+  <!-- Tailwind (Play CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tipografía base -->
+  <!-- Tipografía base y helper de accesibilidad para el skip link -->
   <style>
     html { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
     .sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
   </style>
 </head>
-<body class="bg-bg text-text">
+
+<body class="min-h-screen bg-[#0a192f] text-[#e6f1ff]">
   <!-- Enlace de salto (Accesibilidad) -->
-  <a href="#contenido" class="sr-only sr-only-focusable focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-accent text-bg px-3 py-2 rounded">
+  <a href="#contenido"
+     class="sr-only sr-only-focusable focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-[#64ffda] text-[#0a192f] px-3 py-2 rounded">
     Saltar al contenido
   </a>
 
   <!-- ========== HEADER ========== -->
-  <header class="header sticky top-0 z-50 bg-bg/80 backdrop-blur border-b border-panel/60">
+  <header class="header sticky top-0 z-50 bg-[rgba(10,25,47,0.8)] backdrop-blur border-b border-[#11224099]">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center">
+      <!-- Marca -->
       <a href="#" class="header__brand inline-flex items-center gap-3" aria-label="Inicio">
-        <img src="assets/availability.svg" alt="Logotipo de disponibilidad" class="w-10 h-10 rounded-full">
+        <!-- Logotipo (decorativo) -->
+        <img src="/assets/developer.png" alt="Logotipo de desarrollador" class="w-10 h-10 rounded-full">
         <span class="font-semibold">Ing. Roger Pineda</span>
       </a>
 
+      <!-- Nav a la derecha -->
       <nav class="header__nav ml-auto" aria-label="Principal">
-      <!-- Botón móvil -->
-      <button id="navToggle"
-              class="md:hidden p-2 rounded hover:bg-panel/60"
-              aria-expanded="false" aria-controls="menu">
-              <span class="sr-only">Abrir menú</span> ☰
-      </button>
-      <!-- Menú desktop -->
-      <ul id="menu" class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <li><a class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded" href="#bio">Biografía</a></li>
-            <li><a class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded" href="#experiencia">Experiencia</a></li>
-            <li><a class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded" href="#habilidades">Habilidades</a></li>
-            <li><a class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded" href="#contacto">Contacto</a></li>
-      </ul>
+        <!-- Botón móvil -->
+        <button id="navToggle"
+                class="md:hidden p-2 rounded hover:bg-[#11224099]"
+                aria-expanded="false" aria-controls="menu">
+          <span class="sr-only">Abrir menú</span> ☰
+        </button>
+
+        <!-- Menú desktop -->
+        <ul id="menu" class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#bio">Acerca de mi</a></li>
+          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#experiencia">Experiencia</a></li>
+          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#habilidades">Habilidades</a></li>
+          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#contacto">Contacto</a></li>
+        </ul>
       </nav>
     </div>
 
-    <!-- Menú móvil -->
-    <div id="menuPanel" class="md:hidden hidden border-t border-panel/60">
+    <!-- Menú móvil (panel colapsable) -->
+    <div id="menuPanel" class="md:hidden hidden border-t border-[#11224099]">
       <ul class="max-w-6xl mx-auto px-4 py-3 space-y-2">
-        <li><a class="block py-2 hover:text-accent" href="#bio">Biografía</a></li>
-        <li><a class="block py-2 hover:text-accent" href="#experiencia">Experiencia</a></li>
-        <li><a class="block py-2 hover:text-accent" href="#habilidades">Habilidades</a></li>
-        <li><a class="block py-2 hover:text-accent" href="#contacto">Contacto</a></li>
+        <li><a class="block py-2 hover:text-[#64ffda]" href="#bio">Acerca de mi</a></li>
+        <li><a class="block py-2 hover:text-[#64ffda]" href="#experiencia">Experiencia</a></li>
+        <li><a class="block py-2 hover:text-[#64ffda]" href="#habilidades">Habilidades</a></li>
+        <li><a class="block py-2 hover:text-[#64ffda]" href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </header>
@@ -64,7 +68,7 @@
   <div id="cursorGlow"
        aria-hidden="true"
        class="pointer-events-none fixed inset-0 z-0"
-       style="background: radial-gradient(600px circle at 50% 50%, rgba(100,255,218,0.12), transparent 40%);">
+       style="background: radial-gradient(600px circle at 50% 50%, rgba(100,255,218,0.10), transparent 40%);">
   </div>
 
   <!-- ========== HERO / PRESENTACIÓN ========== -->
@@ -74,113 +78,109 @@
         <h1 class="section__title text-3xl md:text-5xl font-extrabold leading-tight">
           Master en Gestión de Proyectos & Desarrollador de Aplicaciones Web
         </h1>
-        <p class="mt-4 text-muted max-w-prose">
-          Profesional con 13+ años de experiencia liderando proyectos y equipos multidisciplinarios.
-          Actualmente PMO en <strong>SOTEICA</strong>, especializado en la gestión del alcance, mitigación de riesgos, elaboración de métricas ejecutivas y fortalecimiento de procesos de mejora continua.
+        <p class="mt-4 max-w-prose text-[#8892b0]">
+          Profesional con mas de 13 años de experiencia liderando proyectos estratégicos en direferentes áreas y de Tecnología. Actualmente <strong>PMO</strong> en <strong>SOTEICA</strong>, donde coordino implementaciones de software, gestiono equipos multidisciplinarios y garantizo estándares de calidad. 
         </p>
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a href="https://www.linkedin.com/in/roger-pinedab" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-bg px-4 py-2 rounded-lg font-medium shadow-soft">
+             class="inline-flex items-center gap-2 bg-[#64ffda] hover:bg-[#57d9c1] text-[#0a192f] px-4 py-2 rounded-lg font-medium shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
             LinkedIn <span aria-hidden="true">↗</span>
           </a>
           <a href="https://github.com/ROGpin81" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 text-accent hover:text-accent-hover px-4 py-2 rounded-lg font-medium">
+             class="inline-flex items-center gap-2 bg-[#64ffda] hover:bg-[#57d9c1] text-[#0a192f] px-4 py-2 rounded-lg font-medium shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
             GitHub <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
+
+      <!-- Foto de perfil -->
       <div class="bio__media place-self-center">
         <img
-        src="assets/Foto_RogerPineda.jpg"
-        alt="Foto de perfil de Roger Pineda"
-        class="w-48 h-48 md:w-64 md:h-64 object-cover object-[25%_15%] rounded-full"
+          src="assets/Foto_RogerPineda.jpg"
+          alt="Foto de perfil de Roger Pineda"
+          class="w-48 h-48 md:w-64 md:h-64 object-cover object-[25%_15%] rounded-full"
         >
       </div>
-
     </div>
   </section>
 
   <main id="contenido" class="relative z-10 max-w-6xl mx-auto px-4">
     <!-- ========== BIOGRAFÍA ========== -->
-    <section id="bio" class="bio section py-14 border-t border-panel/60">
-      <h2 class="section__title text-2xl md:text-3xl font-bold">Biografía</h2>
+    <section id="bio" class="bio section py-14 border-t border-[#11224099]">
+      <h2 class="section__title text-2xl md:text-3xl font-bold">Acerca de mi</h2>
       <div class="bio__grid mt-6 grid md:grid-cols-3 gap-8">
-        <p class="md:col-span-2 text-muted">
-          SCRUM Máster, bilingüe (inglés B1). He liderado iniciativas de alto impacto en la
-          Secretaría de Desarrollo Económico (Director General de Tratados Comerciales, Asesor MIPYME)
-          y en el sector privado (Grupo LAPCO, CLARO, Banco UNO). Enfoque en resultados, comunicación efectiva y liderazgo servicial.
+        <p class="md:col-span-2 text-[#8892b0]">
+          Estoy certificado como SCRUM Máster y tengo habilidades de comunicación en ingles de nivel B2-B1. He liderado iniciativas de alto impacto en la Secretaría de Desarrollo Económico como Director General de Tratados Comerciales y Asesor MIPYME. A lo largo de mi carrera profesional trabajando en empresas como Banco UNO, CLARO y Grupo LAPCO he desarrollado gran experiencia en la Gestión de Proyectos, supervición, ventas, servicio al cliente y capacitación de personal. 
         </p>
-        <ul class="list-disc pl-5 space-y-2 text-muted">
+        <ul class="list-disc pl-5 space-y-2 text-[#8892b0]">
           <li>Ubicación: Honduras</li>
-          <li>Correo: <a class="text-accent hover:text-accent-hover" href="mailto:roger.pineda@yahoo.com">roger.pineda@yahoo.com</a></li>
-          <li>Teléfono: <a class="text-accent hover:text-accent-hover" href="tel:+50431915840">+504 3191-5840</a></li>
+          <li>Correo: <a class="text-[#64ffda] hover:text-[#57d9c1]" href="mailto:roger.pineda@yahoo.com">roger.pineda@yahoo.com</a></li>
+          <li>Teléfono: <a class="text-[#64ffda] hover:text-[#57d9c1]" href="tel:+50431915840">+504 3191-5840</a></li>
         </ul>
       </div>
     </section>
 
     <!-- ========== EXPERIENCIA ========== -->
-    <section id="experiencia" class="experience section py-14 border-t border-panel/60">
+    <section id="experiencia" class="experience section py-14 border-t border-[#11224099]">
       <h2 class="section__title text-2xl md:text-3xl font-bold">Experiencia</h2>
-      <ol class="mt-6 relative border-s border-panel/60">
+      <ol class="mt-6 relative border-s border-[#11224099]">
         <li class="experience__item pl-6 py-4 relative">
-          <span class="absolute left-0 top-6 -ml-[5px] w-2.5 h-2.5 rounded-full bg-accent" aria-hidden="true"></span>
-          <h3 class="font-semibold">PMO — SOTEICA <span class="text-sm text-muted">(sept. 2023 – actual)</span></h3>
-          <p class="text-muted">
-            Gestión de alcance/objetivos, riesgos, recursos, cronogramas y reportes ejecutivos;
-            facilitación entre equipo técnico/usuarios/directivos; aseguramiento de calidad y mejora continua.
+          <span class="absolute left-0 top-6 -ml-[5px] w-2.5 h-2.5 rounded-full bg-[#64ffda]" aria-hidden="true"></span>
+          <h3 class="font-semibold">PMO — SOTEICA <span class="text-sm text-[#8892b0]">(sept. 2023 – actual)</span></h3>
+          <p class="text-[#8892b0]">
+            Experiencia en Gestión del alcance, objetivos y recursos de los proyectos; Identificación y mitigación de riesgos; Preparación y monitoreo de cronogramas; Elaboración de reportes ejecutivos; Facilitación de la comunicación entre equipo técnico, usuarios y directivos; Y aseguramiento de la calidad y mejora continua.
           </p>
         </li>
         <li class="experience__item pl-6 py-4 relative">
-          <span class="absolute left-0 top-6 -ml-[5px] w-2.5 h-2.5 rounded-full bg-accent" aria-hidden="true"></span>
-          <h3 class="font-semibold">Secretaría de Desarrollo Económico <span class="text-sm text-muted">(2010 – 2023)</span></h3>
-          <p class="text-muted">
-            Director General de Tratados Comerciales; Asesor MIPYME; Jefe de Reglamentación Técnica.
-            Coordinación y negociación de iniciativas de alto impacto.
+          <span class="absolute left-0 top-6 -ml-[5px] w-2.5 h-2.5 rounded-full bg-[#64ffda]" aria-hidden="true"></span>
+          <h3 class="font-semibold">Secretaría de Desarrollo Económico <span class="text-sm text-[#8892b0]">(2010 – 2023)</span></h3>
+          <p class="text-[#8892b0]">
+            Director General de Tratados Comerciales; Asesor MIPYME; Y Jefe de Reglamentación Técnica. Experiencia en Coordinación de propuestas legales y reglamentarias para tratados comerciales, gestión de proyectos de desarrollo empresarial a través del Fideicomiso FOMIPYME y representación oficial de Honduras en negociaciones nacionales e internacionales en materia de reglamentación técnica.
           </p>
         </li>
         <li class="experience__item pl-6 py-4 relative">
-          <span class="absolute left-0 top-6 -ml-[5px] w-2.5 h-2.5 rounded-full bg-accent" aria-hidden="true"></span>
-          <h3 class="font-semibold">Sector Privado <span class="text-sm text-muted">(2003 – 2009)</span></h3>
-          <p class="text-muted">
-            Grupo LAPCO (Capacitador Técnico), CLARO (Logística de Productos Nuevos no Móviles), Banco UNO (Asesor Financiero).
+          <span class="absolute left-0 top-6 -ml-[5px] w-2.5 h-2.5 rounded-full bg-[#64ffda]" aria-hidden="true"></span>
+          <h3 class="font-semibold">Sector Privado <span class="text-sm text-[#8892b0]">(2003 – 2009)</span></h3>
+          <p class="text-[#8892b0]">
+            Grupo LAPCO (Capacitador Técnico); CLARO (Oficial de Logística de Productos Nuevos no Móviles), Banco UNO (Asesor Financiero). Experiencia en capacitación técnica a clientes y supervisión de equipos de ventas, gestión logística y desarrollo de productos para fortalecer la presencia en el mercado, así como asesoría financiera con funciones en telemarketing, back office, coordinación de equipos y apoyo operativo.
           </p>
         </li>
       </ol>
     </section>
 
     <!-- ========== HABILIDADES ========== -->
-    <section id="habilidades" class="skills section py-14 border-t border-panel/60">
+    <section id="habilidades" class="skills section py-14 border-t border-[#11224099]">
       <h2 class="section__title text-2xl md:text-3xl font-bold">Habilidades Técnicas</h2>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="skills__group p-5 rounded-2xl border border-panel/60 bg-panel/40 shadow-soft">
+        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
           <h3 class="font-semibold mb-2">Lenguajes</h3>
-          <p class="text-muted">Java, JavaScript, C#</p>
+          <p class="text-[#8892b0]">Java, JavaScript, C#</p>
         </div>
-        <div class="skills__group p-5 rounded-2xl border border-panel/60 bg-panel/40 shadow-soft">
+        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
           <h3 class="font-semibold mb-2">Frameworks</h3>
-          <p class="text-muted">.NET MAUI, Tailwind CSS, Bootstrap</p>
+          <p class="text-[#8892b0]">.NET MAUI, Tailwind CSS, Bootstrap</p>
         </div>
-        <div class="skills__group p-5 rounded-2xl border border-panel/60 bg-panel/40 shadow-soft">
+        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
           <h3 class="font-semibold mb-2">Base de Datos</h3>
-          <p class="text-muted">MySQL</p>
+          <p class="text-[#8892b0]">MySQL</p>
         </div>
-        <div class="skills__group p-5 rounded-2xl border border-panel/60 bg-panel/40 shadow-soft">
+        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
           <h3 class="font-semibold mb-2">Gestión de Proyectos</h3>
-          <p class="text-muted">PMI, Scrum; Project, JIRA, Trello, Teams</p>
+          <p class="text-[#8892b0]">Scrum Master; Project, JIRA, Trello, Teams</p>
         </div>
-        <div class="skills__group p-5 rounded-2xl border border-panel/60 bg-panel/40 shadow-soft">
+        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
           <h3 class="font-semibold mb-2">Control de versiones</h3>
-          <p class="text-muted">GitHub</p>
+          <p class="text-[#8892b0]">GitHub</p>
         </div>
-        <div class="skills__group p-5 rounded-2xl border border-panel/60 bg-panel/40 shadow-soft">
+        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
           <h3 class="font-semibold mb-2">Ofimática</h3>
-          <p class="text-muted">Microsoft Office (avanzado)</p>
+          <p class="text-[#8892b0]">Microsoft Office (avanzado)</p>
         </div>
       </div>
     </section>
 
     <!-- ========== CONTACTO ========== -->
-    <section id="contacto" class="contact section py-14 border-t border-panel/60">
+    <section id="contacto" class="contact section py-14 border-t border-[#11224099]">
       <h2 class="section__title text-2xl md:text-3xl font-bold">Contacto</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-10">
         <form class="contact__form space-y-4" aria-label="Formulario de contacto"
@@ -188,19 +188,20 @@
           <div>
             <label for="nombre" class="block text-sm font-medium mb-1">Nombre</label>
             <input id="nombre" name="nombre" type="text" required
-                   class="w-full rounded-lg border border-panel/60 bg-panel/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent">
+                   class="w-full rounded-lg border border-[#11224099] bg-[#11224066] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#64ffda]">
           </div>
           <div>
             <label for="correo" class="block text-sm font-medium mb-1">Correo</label>
             <input id="correo" name="correo" type="email" required
-                   class="w-full rounded-lg border border-panel/60 bg-panel/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent">
+                   class="w-full rounded-lg border border-[#11224099] bg-[#11224066] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#64ffda]">
           </div>
           <div>
             <label for="mensaje" class="block text-sm font-medium mb-1">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="4" required
-                      class="w-full rounded-lg border border-panel/60 bg-panel/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+                      class="w-full rounded-lg border border-[#11224099] bg-[#11224066] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#64ffda]"></textarea>
           </div>
-          <button type="submit" class="bg-accent hover:bg-accent-hover text-bg px-4 py-2 rounded-lg font-medium shadow-soft">
+          <button type="submit"
+                  class="bg-[#64ffda] hover:bg-[#57d9c1] text-[#0a192f] px-4 py-2 rounded-lg font-medium shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
             Enviar
           </button>
         </form>
@@ -209,7 +210,7 @@
           <h3 class="font-semibold">Redes</h3>
           <ul class="mt-3 space-y-2">
             <li>
-              <a class="inline-flex items-center gap-2 text-accent hover:text-accent-hover"
+              <a class="inline-flex items-center gap-2 text-[#64ffda] hover:text-[#57d9c1]"
                  href="https://www.linkedin.com/in/roger-pinedab" target="_blank" rel="noopener"
                  aria-label="LinkedIn de Roger Pineda">
                 <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zm-11.75 20H3.5V9h3.75v11zM5.38 7.56c-1.2 0-2.18-.98-2.18-2.19 0-1.2.98-2.18 2.18-2.18 1.2 0 2.18.98 2.18 2.18 0 1.21-.98 2.19-2.18 2.19zM20.5 20h-3.75v-5.61c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V20H9.97V9h3.6v1.5h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.72V20z"/></svg>
@@ -217,7 +218,7 @@
               </a>
             </li>
             <li>
-              <a class="inline-flex items-center gap-2 text-accent hover:text-accent-hover"
+              <a class="inline-flex items-center gap-2 text-[#64ffda] hover:text-[#57d9c1]"
                  href="https://github.com/ROGpin81" target="_blank" rel="noopener"
                  aria-label="GitHub de Roger Pineda">
                 <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.51.12-3.15 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.66 1.64.25 2.85.12 3.15.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.83.57A12 12 0 0 0 12 0z"/></svg>
@@ -231,14 +232,16 @@
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="footer mt-16 py-8 border-t border-panel/60">
+  <footer class="footer mt-16 py-8 border-t border-[#11224099]">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-muted">&copy; <span id="year"></span> Roger Pineda. Todos los derechos reservados.</p>
-      <p class="text-sm">Developed by <a href="https://github.com/ROGpin81" class="text-accent hover:text-accent-hover">https://github.com/ROGpin81</a></p>
+      <p class="text-sm text-[#8892b0]">&copy; <span id="year"></span> Roger Pineda. Todos los derechos reservados.</p>
+      <p class="text-sm">Developed by
+        <a href="https://github.com/ROGpin81" class="text-[#64ffda] hover:text-[#57d9c1]">https://github.com/ROGpin81</a>
+      </p>
     </div>
   </footer>
 
-  <!-- ========== JS mínimo (menú móvil, tema opcional y cursor glow) ========== -->
+  <!-- ========== JS mínimo (menú móvil, año dinámico y cursor glow) ========== -->
   <script>
     // Menú móvil accesible
     const navToggle = document.getElementById('navToggle');
@@ -256,7 +259,7 @@
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Cursor Glow (respeta reduce motion)
+    // Cursor Glow (respetando reduce motion)
     (function(){
       const glow = document.getElementById('cursorGlow');
       if (!glow) return;
@@ -266,7 +269,7 @@
       let mouseY = window.innerHeight / 2;
 
       const update = () => {
-        glow.style.background = `radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(100,255,218,0.12), transparent 40%)`;
+        glow.style.background = `radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(100,255,218,0.10), transparent 40%)`;
         rafId = null;
       };
 
@@ -280,9 +283,10 @@
       if (!prefersReduce.matches) {
         window.addEventListener('mousemove', onMove, { passive: true });
       } else {
-        glow.style.background = `radial-gradient(600px circle at 50% 50%, rgba(100,255,218,0.12), transparent 40%)`;
+        glow.style.background = `radial-gradient(600px circle at 50% 50%, rgba(100,255,218,0.10), transparent 40%)`;
       }
     })();
   </script>
 </body>
 </html>
+
