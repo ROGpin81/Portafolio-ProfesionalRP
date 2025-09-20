@@ -26,43 +26,44 @@
 
   <!-- ========== HEADER ========== -->
   <header class="header sticky top-0 z-50 bg-[rgba(10,25,47,0.8)] backdrop-blur border-b border-[#11224099]">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center">
-      <!-- Marca -->
-      <a href="#" class="header__brand inline-flex items-center gap-3" aria-label="Inicio">
-        <!-- Logotipo (decorativo) -->
-        <img src="/assets/Images/developer.png" alt="Logotipo de desarrollador" class="w-10 h-10 rounded-full">
-        <span class="font-semibold">Ing. Roger Pineda</span>
-      </a>
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center">
+    <!-- Marca -->
+    <a href="#" class="header__brand inline-flex items-center gap-3" aria-label="Inicio">
+      <img src="/assets/Images/developer.png" alt="Logotipo de desarrollador" class="w-10 h-10 rounded-full">
+      <span class="font-semibold">Ing. Roger Pineda</span>
+    </a>
 
-      <!-- Nav a la derecha -->
-      <nav class="header__nav ml-auto" aria-label="Principal">
-        <!-- Botón móvil -->
-        <button id="navToggle"
-                class="md:hidden p-2 rounded hover:bg-[#11224099]"
-                aria-expanded="false" aria-controls="menu">
-          <span class="sr-only">Abrir menú</span> ☰
-        </button>
+    <!-- Nav a la derecha -->
+    <nav class="header__nav ml-auto" aria-label="Principal">
+      <!-- Botón móvil: ahora controla SOLO el panel -->
+      <button id="navToggle"
+              class="md:hidden p-2 rounded hover:bg-[#11224099]"
+              aria-expanded="false"
+              aria-controls="menuPanel">
+        <span class="sr-only">Abrir menú</span> ☰
+      </button>
 
-        <!-- Menú desktop -->
-        <ul id="menu" class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#bio">Acerca de mi</a></li>
-          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#experiencia">Experiencia</a></li>
-          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#habilidades">Habilidades</a></li>
-          <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-transparent rounded px-1" href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Menú móvil (panel colapsable) -->
-    <div id="menuPanel" class="md:hidden hidden border-t border-[#11224099]">
-      <ul class="max-w-6xl mx-auto px-4 py-3 space-y-2">
-        <li><a class="block py-2 hover:text-[#64ffda]" href="#bio">Acerca de mi</a></li>
-        <li><a class="block py-2 hover:text-[#64ffda]" href="#experiencia">Experiencia</a></li>
-        <li><a class="block py-2 hover:text-[#64ffda]" href="#habilidades">Habilidades</a></li>
-        <li><a class="block py-2 hover:text-[#64ffda]" href="#contacto">Contacto</a></li>
+      <!-- Menú de ESCRITORIO (no se toca por JS) -->
+      <ul id="menuDesktop" class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] rounded px-1" href="#bio">Acerca de mi</a></li>
+        <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] rounded px-1" href="#experiencia">Experiencia</a></li>
+        <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] rounded px-1" href="#habilidades">Habilidades</a></li>
+        <li><a class="hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] rounded px-1" href="#contacto">Contacto</a></li>
       </ul>
-    </div>
-  </header>
+    </nav>
+  </div>
+
+  <!-- Panel MÓVIL: aparece DEBAJO del header y empuja el contenido -->
+  <div id="menuPanel" class="md:hidden hidden border-t border-[#11224099]">
+    <ul class="max-w-6xl mx-auto px-4 py-3 space-y-2">
+      <li><a class="block py-2 hover:text-[#64ffda]" href="#bio">Acerca de mi</a></li>
+      <li><a class="block py-2 hover:text-[#64ffda]" href="#experiencia">Experiencia</a></li>
+      <li><a class="block py-2 hover:text-[#64ffda]" href="#habilidades">Habilidades</a></li>
+      <li><a class="block py-2 hover:text-[#64ffda]" href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
 
   <!-- Cursor Glow (iluminación que sigue el puntero) -->
   <div id="cursorGlow"
@@ -106,12 +107,12 @@
 
   <main id="contenido" class="relative z-10 max-w-6xl mx-auto px-4">
 
-    <!-- ========== BIOGRAFÍA ========== -->
+    <!-- ========== ACERCA DE MI ========== -->
     <section id="bio" class="bio section py-14 border-t border-[#11224099]">
       <h2 class="section__title text-2xl md:text-3xl font-bold">Acerca de mi</h2>
       <div class="bio__grid mt-6 grid md:grid-cols-3 gap-8">
         <p class="md:col-span-2 text-[#8892b0]">
-          Estoy certificado como SCRUM Máster y tengo habilidades de comunicación en ingles de nivel B2-B1. He liderado iniciativas de alto impacto en la Secretaría de Desarrollo Económico como Director General de Tratados Comerciales y Asesor MIPYME. A lo largo de mi carrera profesional trabajando en empresas como Banco UNO, CLARO y Grupo LAPCO he desarrollado gran experiencia en la Gestión de Proyectos, supervición, ventas, servicio al cliente y capacitación de personal. 
+          Estoy certificado como SCRUM Máster y tengo habilidades de comunicación en ingles de nivel B2-B1. He liderado iniciativas de alto impacto en la Secretaría de Desarrollo Económico como Director General de Tratados Comerciales y Asesor MIPYME. A lo largo de mi carrera profesional trabajando en empresas como Banco UNO, CLARO y Grupo LAPCO he desarrollado gran experiencia en la Gestión de Proyectos, supervisión, ventas, servicio al cliente y capacitación de personal. 
         </p>
         <ul class="list-disc pl-5 space-y-2 text-[#8892b0]">
           <li>Ubicación: Honduras</li>
@@ -304,17 +305,47 @@
   <!-- ========== JS mínimo (menú móvil, año dinámico y cursor glow) ========== -->
   <script>
     // Menú móvil accesible
-    const navToggle = document.getElementById('navToggle');
-    const menu = document.getElementById('menu');
-    const panel = document.getElementById('menuPanel');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!expanded));
-        menu.classList.toggle('hidden');
-        panel.classList.toggle('hidden');
-      });
-    }
+   const navToggle = document.getElementById('navToggle');
+  const menuPanel = document.getElementById('menuPanel');
+
+  function closeMobileMenu() {
+    navToggle.setAttribute('aria-expanded', 'false');
+    menuPanel.classList.add('hidden');
+  }
+
+  function openMobileMenu() {
+    navToggle.setAttribute('aria-expanded', 'true');
+    menuPanel.classList.remove('hidden');
+    // Llevar el foco al primer enlace para accesibilidad:
+    const firstLink = menuPanel.querySelector('a');
+    firstLink && firstLink.focus();
+  }
+
+  if (navToggle && menuPanel) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      expanded ? closeMobileMenu() : openMobileMenu();
+    });
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+        closeMobileMenu();
+        navToggle.focus();
+      }
+    });
+
+    // Cerrar al elegir una opción
+    menuPanel.addEventListener('click', (e) => {
+      if (e.target.closest('a')) closeMobileMenu();
+    });
+
+    // Si cambia a escritorio (>= md), garantizamos cerrado
+    const mdQuery = window.matchMedia('(min-width: 768px)');
+    mdQuery.addEventListener('change', (mq) => {
+      if (mq.matches) closeMobileMenu();
+    });
+  }
 
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
