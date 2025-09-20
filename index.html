@@ -105,6 +105,7 @@
   </section>
 
   <main id="contenido" class="relative z-10 max-w-6xl mx-auto px-4">
+
     <!-- ========== BIOGRAFÍA ========== -->
     <section id="bio" class="bio section py-14 border-t border-[#11224099]">
       <h2 class="section__title text-2xl md:text-3xl font-bold">Acerca de mi</h2>
@@ -149,35 +150,94 @@
     </section>
 
     <!-- ========== HABILIDADES ========== -->
-    <section id="habilidades" class="skills section py-14 border-t border-[#11224099]">
-      <h2 class="section__title text-2xl md:text-3xl font-bold">Habilidades Técnicas</h2>
-      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
-          <h3 class="font-semibold mb-2">Lenguajes</h3>
-          <p class="text-[#8892b0]">Java, JavaScript, C#</p>
-        </div>
-        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
-          <h3 class="font-semibold mb-2">Frameworks</h3>
-          <p class="text-[#8892b0]">.NET MAUI, Tailwind CSS, Bootstrap</p>
-        </div>
-        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
-          <h3 class="font-semibold mb-2">Base de Datos</h3>
-          <p class="text-[#8892b0]">MySQL</p>
-        </div>
-        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
-          <h3 class="font-semibold mb-2">Gestión de Proyectos</h3>
-          <p class="text-[#8892b0]">Scrum Master; Project, JIRA, Trello, Teams</p>
-        </div>
-        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
-          <h3 class="font-semibold mb-2">Control de versiones</h3>
-          <p class="text-[#8892b0]">GitHub</p>
-        </div>
-        <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)]">
-          <h3 class="font-semibold mb-2">Ofimática</h3>
-          <p class="text-[#8892b0]">Microsoft Office (avanzado)</p>
-        </div>
+<section id="habilidades" class="skills section py-14 border-t border-[#11224099]">
+  <h2 class="section__title text-2xl md:text-3xl font-bold">Habilidades Técnicas</h2>
+
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Lenguajes -->
+    <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)] transition-transform hover:-translate-y-0.5">
+      <div class="skills__header flex items-center gap-3">
+        <h3 class="skills__title font-semibold">Lenguajes</h3>
       </div>
-    </section>
+      <p class="skills__desc text-[#8892b0] mt-2">Java, JavaScript, C#</p>
+
+      <!-- Logos -->
+      <ul class="skills__icons mt-3 flex flex-wrap items-center gap-3" aria-label="Logos de lenguajes">
+        <li><img src="/assets/Logos/java.png" alt="Java" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/javascript.png" alt="JavaScript" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/csharp.png" alt="C#" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+      </ul>
+    </div>
+
+    <!-- Frameworks -->
+    <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)] transition-transform hover:-translate-y-0.5">
+      <div class="skills__header flex items-center gap-3">
+        <h3 class="skills__title font-semibold">Frameworks</h3>
+      </div>
+      <p class="skills__desc text-[#8892b0] mt-2">.NET MAUI, Tailwind CSS, Bootstrap</p>
+
+      <ul class="skills__icons mt-3 flex flex-wrap items-center gap-3" aria-label="Logos de frameworks">
+        <li><img src="/assets/Logos/netMAUI.png" alt=".NET MAUI" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/tailwind-css.png" alt="Tailwind CSS" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/bootstrap.png" alt="Bootstrap" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+      </ul>
+    </div>
+
+    <!-- Base de Datos -->
+    <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)] transition-transform hover:-translate-y-0.5">
+      <div class="skills__header flex items-center gap-3">
+        <h3 class="skills__title font-semibold">Base de Datos</h3>
+      </div>
+      <p class="skills__desc text-[#8892b0] mt-2">MySQL</p>
+
+      <ul class="skills__icons mt-3 flex flex-wrap items-center gap-3" aria-label="Logos de bases de datos">
+        <li><img src="/assets/Logos/mysql.png" alt="MySQL" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+      </ul>
+    </div>
+
+    <!-- Gestión de Proyectos -->
+    <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)] transition-transform hover:-translate-y-0.5">
+      <div class="skills__header flex items-center gap-3">
+        <h3 class="skills__title font-semibold">Gestión de Proyectos</h3>
+      </div>
+      <p class="skills__desc text-[#8892b0] mt-2">Scrum Master; Project, JIRA, Trello, Teams</p>
+
+      <ul class="skills__icons mt-3 flex flex-wrap items-center gap-3" aria-label="Logos de gestión de proyectos">
+        <li><img src="/assets/Logos/scrum.png" alt="Scrum" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/msproject.svg" alt="Microsoft Project" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/jira.png" alt="Jira" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/trello.png" alt="Trello" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+        <li><img src="/assets/Logos/teams.png" alt="Microsoft Teams" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+      </ul>
+    </div>
+
+    <!-- Control de versiones -->
+    <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)] transition-transform hover:-translate-y-0.5">
+      <div class="skills__header flex items-center gap-3">
+        <h3 class="skills__title font-semibold">Control de versiones</h3>
+      </div>
+      <p class="skills__desc text-[#8892b0] mt-2">GitHub</p>
+
+      <ul class="skills__icons mt-3 flex flex-wrap items-center gap-3" aria-label="Logos de control de versiones">
+        <li><img src="/assets/Logos/github.png" alt="GitHub" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+      </ul>
+    </div>
+
+    <!-- Ofimática -->
+    <div class="skills__group p-5 rounded-2xl border border-[#11224099] bg-[#11224066] shadow-[0_10px_30px_-15px_rgba(2,12,27,.7)] transition-transform hover:-translate-y-0.5">
+      <div class="skills__header flex items-center gap-3">
+        <h3 class="skills__title font-semibold">Ofimática</h3>
+      </div>
+      <p class="skills__desc text-[#8892b0] mt-2">Microsoft Office (avanzado)</p>
+
+      <ul class="skills__icons mt-3 flex flex-wrap items-center gap-3" aria-label="Logos de ofimática">
+        <li><img src="/assets/Logos/moffice.png" alt="Microsoft Office" loading="lazy" decoding="async" class="skills__icon h-7 w-7 md:h-8 md:w-8 object-contain" /></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
     <!-- ========== CONTACTO ========== -->
     <section id="contacto" class="contact section py-14 border-t border-[#11224099]">
